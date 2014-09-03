@@ -1,0 +1,14 @@
+for dir in conf cache uploads ; do
+  src_dir="${OPENSHIFT_REPO_DIR}${dir}"
+  dest_dir="${OPENSHIFT_DATA_DIR}${dir}"
+  
+  if [ ! -d $dest_dir -a -d $src_dir ] ; then
+    echo "Moving $dir to persistent storage"
+    mv $src_dir $dest_dir
+    echo "...Done"
+  fi
+  
+  if [ ! -f $src_dir -a -d $dest_dir ] ; then
+    ln -s $dest_dir $src_dir
+  fi
+done

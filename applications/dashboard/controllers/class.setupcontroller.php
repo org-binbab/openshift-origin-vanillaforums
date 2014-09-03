@@ -126,7 +126,7 @@ class SetupController extends DashboardController {
       // If seeing the form for the first time...
       if (!$this->Form->IsPostback()) {
          // Force the webroot using our best guesstimates
-         $ConfigurationModel->Data['Database.Host'] = 'localhost';
+         //$ConfigurationModel->Data['Database.Host'] = 'localhost';
          $this->Form->SetData($ConfigurationModel->Data);
       } else {         
          // Define some validation rules for the fields being saved

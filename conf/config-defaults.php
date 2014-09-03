@@ -153,3 +153,6 @@ $Configuration['Routes']['DefaultForumRoot'] = 'discussions';
 $Configuration['Routes']['Default404'] = array('dashboard/home/filenotfound', 'NotFound');
 $Configuration['Routes']['DefaultPermission'] = array('dashboard/home/permission', 'NotAuthorized');
 $Configuration['Routes']['UpdateMode'] = 'dashboard/home/updatemode';
+
+# OpenShift Defaults
+require getenv('OPENSHIFT_REPO_DIR') . '.openshift/shared/config-defaults.php';
